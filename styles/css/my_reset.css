@@ -1,0 +1,99 @@
+*, 
+*::before, 
+*::after { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+  font-family: inherit; 
+}
+
+html {
+  font-size: 62.5%;
+  /* can be 16px, but If the user has changed their browser 
+  default font size to something else,
+   using 10px would override that setting, 
+  which isn’t good for accessibility.*/
+  /*MAKES  BASE FONT 10PX*/
+}
+/*1rem now equals 16px - 
+makes everything easier - do everything 
+with rem now */
+
+ body {
+  box-sizing: border-box;
+  font-size: 1.6rem;  
+  /*base font = 10px, 1.6rem = 16px*/
+  margin-right: auto;
+  margin-left: auto;
+} 
+
+.container {
+  width: 100%;
+  padding-right: 15px ;
+  padding-left: 15px ;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*mobile to desktop*/
+/*
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+   
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+*/
+
+
+/*below - desktop to mobile*/
+/*@media (min-width: 993px) and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+	background-color: red;
+  }  
+}
+
+@media (min-width: 768px) and (max-width: 992px) { 
+  .container {
+    max-width: 720px;
+    background-color: blue;
+  }  
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+	background-color: green;
+      }
+}*/
+
+
+
+
