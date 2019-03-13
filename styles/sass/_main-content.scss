@@ -1,0 +1,107 @@
+.main{
+	font-family: $headerFont;
+}
+
+//Dashboard text
+h1{
+	color: $sidebar;
+	margin: 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-decoration: underline;
+	@include tablet {
+		padding: 2rem 1rem;
+		text-decoration: none;
+		background-color: whitesmoke;
+	}
+	@include desktop {
+		padding: 2rem 1rem;
+		text-decoration: none;
+		background-color: lightslategrey;
+		border-bottom: 2px solid $sidebar;
+	}
+}
+
+//places search icon inside search input field - .button, .search also
+.input{
+	display: flex;
+	border: 1px solid $sidebar;
+ 	border-left: 0;
+ 	border-right: 0;
+ 	margin: .5rem 0;
+}
+
+button{
+	padding: .4rem;
+	background-color: floralwhite;
+	border: none;
+	color: $sidebar;
+	&:focus {
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+}
+
+.search{
+	flex-grow: 2;
+	border: none;
+	background-color: whitesmoke;
+	padding: 0 1rem;
+	&:focus {
+		outline: none;
+	}
+	&::placeholder {
+		color: black;
+		font-size: 1.2rem;
+	}
+}
+
+//mainheader and nav inside the main grid area
+.mainHeader{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 1rem;
+	background-color: whitesmoke;
+	@include tablet {
+		flex-direction: row;
+	}
+}
+
+//alert message box
+
+.alertBox{
+	display: flex;
+	font-size: 1.2rem;
+	color: snow;
+	justify-content: space-between;
+	background-color: $header;
+	margin: 2rem;
+	border-radius: .8rem;
+	line-height: 2.5rem;
+	padding-left: 2rem;
+	@include tablet {
+		line-height: 4rem;
+	}
+}
+
+.alert{
+	font-size: 1.3rem;
+	color: white;
+	background-color: crimson;
+	border-radius: 5px;
+	@include tablet {
+			margin-left: 2rem;
+			padding: .3rem;
+			padding-top: .1rem; 
+			padding-bottom: .1rem;
+	}	
+}
+
+#exit{
+	font-size: 1.1rem;
+	@include tablet {
+			font-size: 1.4rem;
+	}
+}

@@ -1,0 +1,20 @@
+//media query for tablet screensize
+@mixin tablet{
+	@media screen and (min-width: $tablet ){
+			@content;
+		}
+}
+
+//media query for desktop screensize
+@mixin desktop {
+	@media screen and (min-width:  $desktop ){
+		@content;
+		}
+	}
+//media query for when users screen becomes shorter than initially anticipated
+//most used only on the icon sidebar
+@mixin shortScreen{
+	@media (max-height: 360px){
+		@content;
+	}
+}
