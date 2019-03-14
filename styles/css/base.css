@@ -11,23 +11,23 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   h1 {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     text-decoration: none;
-    background-color: whitesmoke;
+    background-color: floralwhite;
+    font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 1024px) {
   h1 {
-    padding: 2rem 1rem;
     text-decoration: none;
-    background-color: lightslategrey;
-    border-bottom: 2px solid #4D477F;
+    background-color: floralwhite;
+    border-bottom: 2px solid #bdbad8;
   }
 }
 
 .input {
   display: flex;
-  border: 1px solid #4D477F;
+  border: 2px solid #4D477F;
   border-left: 0;
   border-right: 0;
   margin: 0.5rem 0;
@@ -105,12 +105,10 @@ button:focus {
 }
 
 #exit {
-  font-size: 1.1rem;
-}
-@media screen and (min-width: 768px) {
-  #exit {
-    font-size: 1.4rem;
-  }
+  font-size: 1.6rem;
+  cursor: pointer;
+  align-self: center;
+  margin-right: 0.3rem;
 }
 
 body {
@@ -129,7 +127,7 @@ body {
 .main {
   grid-column: 1/-1;
   grid-row: 3/-1;
-  background: lightslategrey;
+  background: floralwhite;
 }
 @media screen and (min-width: 768px) {
   .main {
@@ -209,13 +207,13 @@ li {
   animation-timing-function: cubic-bezier(0.82, -0.03, 0.85, 3.6);
 }
 
-svg {
+.myDashSVG {
   width: 8rem;
   stroke: white;
   fill: white;
   margin-right: 1.4rem;
 }
-svg:hover {
+.myDashSVG:hover {
   stroke-width: 0px;
 }
 

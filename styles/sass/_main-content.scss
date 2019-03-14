@@ -10,22 +10,22 @@ h1{
 	padding-right: 1rem;
 	text-decoration: underline;
 	@include tablet {
-		padding: 2rem 1rem;
+		padding: 2rem 2rem;
 		text-decoration: none;
-		background-color: whitesmoke;
+		background-color: floralwhite;
+		font-size: 1.6rem;
 	}
 	@include desktop {
-		padding: 2rem 1rem;
 		text-decoration: none;
-		background-color: lightslategrey;
-		border-bottom: 2px solid $sidebar;
+		background-color: floralwhite;
+		border-bottom: 2px solid lighten($sidebar, 40%);
 	}
 }
 
 //places search icon inside search input field - .button, .search also
 .input{
 	display: flex;
-	border: 1px solid $sidebar;
+	border: 2px solid $sidebar;
  	border-left: 0;
  	border-right: 0;
  	margin: .5rem 0;
@@ -100,8 +100,8 @@ button{
 }
 
 #exit{
-	font-size: 1.1rem;
-	@include tablet {
-			font-size: 1.4rem;
-	}
+	font-size: 1.6rem;
+	cursor: pointer;
+	align-self: center;
+	margin-right: .3rem;
 }

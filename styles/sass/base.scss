@@ -2,13 +2,15 @@
 
 $sidebar: #4D477F;
 $header: #5C557F;
+$icons: #555A91;
 $mobile: 320px;
 $tablet: 768px;
 $desktop: 1024px;
 $headerFont: 'Roboto Slab';
 
-
 @import "media-query-mixins" ;
+@import "social-content";
+
 @import "main-content";
 
 //at end of project, separate this base even more - sidebar, header, etc
@@ -31,7 +33,7 @@ body{
 .main{
 	grid-column: 1 / -1;
 	grid-row: 3 / -1;
-	background: lightslategrey;
+	background: floralwhite;
 	@include tablet {
 		grid-column: 1 / -1;
 		grid-row-start: 3;
@@ -111,13 +113,13 @@ li{
 
 //MyDash icon svg settings
 //"dash"
-svg{
+.myDashSVG{
 	width: 8rem;
 	stroke: white;
 	fill: white;
 	margin-right: 1.4rem;
 	&:hover  {
-		stroke-width: 0px;
+		stroke-width: 0px; 
 	}
 }
 //"my"
@@ -199,3 +201,5 @@ g{
 		width: 3rem;
 	}
 }
+
+
