@@ -1,3 +1,73 @@
+h4 {
+  font-size: 1.3rem;
+  padding-left: 2rem;
+  font-weight: 500;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.socialStats {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+h3 + .numbers {
+  font-size: 2.5rem;
+  color: dimgrey;
+}
+
+.twitter,
+.facebook,
+.google {
+  color: #555A91;
+  letter-spacing: 0.1rem;
+  border: 2px solid lightgrey;
+  display: flex;
+  border-radius: 0.5rem;
+  background-color: snow;
+  max-height: 8rem;
+}
+
+.socialCard {
+  align-self: center;
+  padding: 1.5rem;
+}
+
+.twitterIcon,
+.facebookIcon,
+.googleIcon {
+  width: 6rem;
+  padding-left: 1rem;
+}
+
+.formCard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newMembers,
+.recentActivity,
+.messageUser {
+  color: green;
+  width: 50%;
+  border: 1px solid grey;
+}
+
+.settings {
+  flex: 1;
+  border: 1px solid grey;
+  border-top: none;
+  border-left: none;
+}
+
+p {
+  color: red;
+}
+
 .main {
   font-family: "Roboto Slab";
 }
@@ -116,12 +186,11 @@ body {
 }
 
 .container {
-  height: 100vh;
   max-width: 1200px;
   display: grid;
   grid-gap: 0.3rem 0;
   grid-template-columns: 1.3fr 3.5fr 3.5fr 3.5fr;
-  grid-template-rows: 1fr 1.5fr 1fr 1fr 5fr;
+  grid-template-rows: 50px minmax(50px, max-content);
 }
 
 .main {
@@ -172,6 +241,7 @@ li {
 
 .avitar {
   max-width: 4rem;
+  max-height: 5rem;
   border-radius: 50%;
   margin-right: 1rem;
   margin-left: auto;
@@ -185,7 +255,10 @@ li {
 
 .bell {
   margin-right: 1rem;
+  width: 2rem;
+  height: 3rem;
   padding-right: 0.4rem;
+  align-self: center;
 }
 
 .horizontal {
@@ -297,14 +370,14 @@ g {
 
 .dashboard,
 .visits,
-.settings,
+.setting,
 .members,
 .bell {
   width: 2.5rem;
 }
 .dashboard:hover,
 .visits:hover,
-.settings:hover,
+.setting:hover,
 .members:hover,
 .bell:hover {
   width: 3rem;

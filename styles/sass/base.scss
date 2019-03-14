@@ -10,7 +10,7 @@ $headerFont: 'Roboto Slab';
 
 @import "media-query-mixins" ;
 @import "social-content";
-
+@import "form-boxes";
 @import "main-content";
 
 //at end of project, separate this base even more - sidebar, header, etc
@@ -21,12 +21,13 @@ body{
 }
 
 .container{
-	height: 100vh;
 	max-width: 1200px;
+	// height: 100vh;
 	display: grid;
 	grid-gap: .3rem 0;
 	grid-template-columns: 1.3fr 3.5fr 3.5fr 3.5fr ;
-	grid-template-rows: 1fr 1.5fr  1fr 1fr 5fr ;
+grid-template-rows: 50px minmax(50px, max-content);
+	// grid-auto-rows:  minmax(10px, auto);
 }
 
 //mainContent 
@@ -49,6 +50,7 @@ body{
 	grid-column: 1 / -1;
 	color: white;
 	background-color: $header;
+
 }
 
 nav{
@@ -74,6 +76,7 @@ li{
 
 .avitar{
 	max-width: 4rem;
+	max-height: 5rem;
 	border-radius: 50%;
 	margin-right: 1rem;
 	margin-left: auto;
@@ -87,7 +90,10 @@ li{
 
 .bell{
 	margin-right: 1rem;
+	width: 2rem;
+	height: 3rem;
 	padding-right: .4rem;
+	align-self: center;
 }
 
 .horizontal{
@@ -193,7 +199,7 @@ g{
 
 .dashboard,
 .visits,
-.settings,
+.setting,
 .members,
 .bell{
 	width: 2.5rem;

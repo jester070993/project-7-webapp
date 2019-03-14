@@ -1,0 +1,35 @@
+//sets display area for 4  form areas on lower half of page
+.formCard{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+//evenly divieds each box, 2 on top of 2 
+.newMembers,
+.recentActivity,
+.messageUser,
+{
+	color: green; 
+	width: 50%;
+	border: 1px solid grey;
+	}
+//extends last box to edge
+.settings{
+	flex: 1;
+	border:1px solid grey;
+	border-top: none;
+	border-left: none;
+
+}
+
+// .messageUser{
+// 	border-top: none;
+// }
+
+// .recentActivity{
+// 	border-left: none;
+// }
+
+p{
+	color: red;
+}
