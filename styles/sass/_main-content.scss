@@ -31,9 +31,9 @@ h1{
  	margin: .5rem 0;
 }
 
-button{
+.searchButton{
 	padding: .4rem;
-	background-color: floralwhite;
+	background-color: whitesmoke;
 	border: none;
 	color: $sidebar;
 	&:focus {
@@ -97,6 +97,10 @@ button{
 			padding-top: .1rem; 
 			padding-bottom: .1rem;
 	}	
+}
+
+.message{
+	color: white;
 }
 
 #exit{

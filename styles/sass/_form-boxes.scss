@@ -2,6 +2,7 @@
 .formCard{
 	display: flex;
 	flex-wrap: wrap;
+	padding: 0 .5rem;
 }
 
 //evenly divieds each box, 2 on top of 2 
@@ -9,27 +10,299 @@
 .recentActivity,
 .messageUser,
 {
-	color: green; 
-	width: 50%;
-	border: 1px solid grey;
+	width: 100%;
+	// border:  solid lightgrey;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	@include tablet{
+		width: 50%;
 	}
+}
 //extends last box to edge
 .settings{
 	flex: 1;
-	border:1px solid grey;
-	border-top: none;
-	border-left: none;
+	// border-top: none;
+	padding: 1rem;
+	display: flex;
+	@include tablet {
+			// border-left: none;
+	}
+}
+
+.messageUser{
+
+	@include tablet {
+		border-top: 1.5px solid lightgrey;
+					border-right: 1.5px solid lightgrey;
+
+	
+	}
 
 }
 
-// .messageUser{
-// 	border-top: none;
-// }
 
-// .recentActivity{
-// 	border-left: none;
-// }
 
-p{
-	color: red;
+.recentActivity{
+	// border-top: none;
+	// border-bottom: none;
+	@include tablet{
+			 border-left: 1.5px solid lightgrey;
+			// border-top: 1.5px solid lightgrey;
+			// border-bottom: 1.5px solid lightgrey;
+	}
 }
+
+.email{
+	font-size: 1.2rem;
+	color: $purple;
+	padding-top: .2rem;
+}
+
+.membercard{
+	display: flex;
+	color: grey;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.date{
+	margin-left: auto;
+	align-self: center;
+	font-size: 1.2rem;
+	color: dimgrey;
+	padding-right: 1rem;
+}
+
+hr{
+	color: lightgrey;
+	radius: 50%;
+}
+
+.userImage{
+	max-width: 4rem;
+	max-height: 5rem;
+	margin-right: 1rem;
+	border-radius: 2rem;
+	border: solid 2px #CCC;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, .9);
+
+}
+
+.form{
+	display: flex;
+	flex-direction: column;
+}
+
+.messageheading{
+	margin-bottom: 1rem;
+	letter-spacing: 1rem;
+}
+
+.forminput{
+	margin-bottom: 1rem;
+	height: 4rem;
+	border-radius: .5rem;
+	border: solid lightgrey;
+	&:focus{
+		border: solid $header;
+	}
+	&::placeholder {
+		font-size: 1.1rem;
+	}
+
+}
+
+.send{
+	padding: .4rem;
+	background-color: $purple;
+	color: white;
+	border-radius: .6rem;
+	flex:1 ;
+	border-style: solid;
+	font-size: 1.2rem;
+	line-height: 4rem;
+	// border-style: solid;
+	&:hover{
+		@include buttonHover;
+	}
+}
+
+textarea{
+	resize: vertical;
+	height: 12.9rem;
+	margin-bottom: 1rem;
+	border-radius: .5rem;
+	border: solid lightgrey;
+	&:focus{
+		border: solid $header;
+	}
+	&::placeholder{
+		font-size: 1.2rem;
+	}
+}
+
+//displays 2 buttons side by side, button styling
+.timezoneButtons{
+	display: flex;
+}
+
+
+.send1{
+	flex: 2;
+	padding: .4rem;
+	background-color: $purple;
+	color: white;
+	border-radius: .5rem;
+	flex:1 ;
+	border-style: solid;
+	font-size: 1.2rem;
+	line-height: 4rem;
+	&:hover{
+		@include buttonHover;
+	}
+}
+
+.send1:nth-of-type(2){
+	background-color: darkgrey;
+}
+
+
+//inserting arrow down icon on timezone slection, not default
+#select{
+	// background: #F0F3FB;
+	// border: 1px solid #F0F3FB;
+	// border-radius: 4px;
+	width: 100%;
+	// padding: 20px;
+	// font-size: 16px;
+	// color: #3F3F3F;
+    line-height: 1;
+    border: solid lightgrey;
+    border-radius: .5rem;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right white;
+    -webkit-appearance: none;
+    background-position-x: 97%;
+}
+
+//slide button stying, slider, positioning, etc.
+.notification{
+	font-size: 1.6rem;
+	
+	width: 100%;
+	align-self: center;
+	color: grey;
+	@include tablet{
+		width: 40%;
+	}
+}
+
+.switch{
+	margin-right: auto;
+}
+
+.toggle1{
+	display: flex;
+	margin-bottom: 3.5rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 6rem;
+  height: 3.4rem;
+}
+
+/* Hide default HTML checkbox */
+.switch .checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #ccc;
+  transition: .4s;
+    border:  solid lightgrey;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 1px;
+  // left: -5px;
+  bottom: 4px;
+  top: 1px;
+  background-color: white;
+  transition: .4s;
+   // border:  solid lightgrey;
+
+}
+
+.checkbox:checked + .slider {
+  background-color: $header;
+}
+
+.checkbox:focus + .slider {
+  box-shadow: 0 0 1px $header;
+}
+
+.checkbox:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.on
+{
+  display: none;
+}
+
+//on and off text in slider
+.on 
+{
+  color: white;
+   // position: absolute;
+  transform: translate(15% , 80%);
+  top: 50%;
+  left: 50%;
+  font-size: .9rem;
+  font-family: Verdana, sans-serif;
+}
+
+.off{
+	  color: $purple;
+	  position: absolute;
+	  transform: translate(18%,-50%);
+	  top: 50%;
+	  left: 50%;
+	  font-size: .9rem;
+	  font-family: Verdana, sans-serif;
+}
+
+.checkbox:checked+ .slider .on
+{display: block;}
+
+.checkbox:checked + .slider .off
+{display: none;}

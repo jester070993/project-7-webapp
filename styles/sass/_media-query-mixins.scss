@@ -18,3 +18,11 @@
 		@content;
 	}
 }
+
+
+@mixin buttonHover{
+		color: $purple;
+		background-color: white;
+		cursor: pointer;
+		border-color: $purple;
+}

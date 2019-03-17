@@ -1,0 +1,15 @@
+.chartArea{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.upperChart{
+	width: 100%;
+	// margin: 0 auto;
+}
+
+.lowerChart1,
+.lowerChart2 {
+	flex: 1;
+}
