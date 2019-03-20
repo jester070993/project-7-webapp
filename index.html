@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="styles/css/my_reset.css">
 	<link rel="stylesheet" href="styles/css/normalize.css">
 	<link rel="stylesheet" href="styles/css/base.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -77,14 +79,14 @@
 		
 		<div class="chartArea">
 			<div class="upperChart">
-				chart1
+				<canvas id="chart1"height="100"  > </canvas>
 			</div>
 			<div class="lowerChart1">
-				chart2
+				<canvas id="chart2"  > </canvas>	
 			</div>
 			<div class="lowerChart2">
-				chart 3
-			</div>
+				<canvas id="chart3" height="150"> </canvas>
+ 			</div>
 		</div>
 		<h4>Social Stats</h4>
 		<div class="socialStats">
@@ -222,28 +224,31 @@
 						<p class="notification">Send Email Notifications</p>
 						<label class="switch">
 						  <input type="checkbox" class="checkbox">
-						  <span class="slider round">
-							  <span class="on">ON</span>
-							  <span class="off">OFF</span>
-						</span>
+						  <span class="slider round"> </span>
 						</label>
 					</div>
 					<div class="toggle1">
 						<p class="notification">Set Profile to Public</p>
 						<label class="switch">
 						  <input type="checkbox" class="checkbox">
-						  <span class="slider round">
-							  <span class="on">ON</span>
-							  <span class="off">OFF</span>
-					      </span>
+						  <span class="slider round"></span>
 						</label>
 					</div>
 
 				<form class="form">
-					<select name="" id="select" class="forminput">
-						<option value="">3</option>
-						<option value="">2</option>
-						<option value="">3</option>
+					<select name="" id="select" class="forminput" >
+						<option disabled selected> Select Timezone</option>
+
+						<option timeZoneId="3" gmtAdjustment="GMT-10:00" useDaylightTime="0" value="-10">(GMT-10:00) Hawaii</option>
+						<option timeZoneId="4" gmtAdjustment="GMT-09:00" useDaylightTime="1" value="-9">(GMT-09:00) Alaska</option>
+						<option timeZoneId="5" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+						<option timeZoneId="6" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Tijuana, Baja California</option>
+						<option timeZoneId="7" gmtAdjustment="GMT-07:00" useDaylightTime="0" value="-7">(GMT-07:00) Arizona</option>
+						<option timeZoneId="8" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+						<option timeZoneId="9" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+						<option timeZoneId="10" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">(GMT-06:00) Central America</option>
+						<option timeZoneId="11" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+						<option timeZoneId="12" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
 					</select>
 					<div class="timezoneButtons">
 						<button class=" send1">SAVE</button>	

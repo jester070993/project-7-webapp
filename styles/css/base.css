@@ -4,6 +4,7 @@ h4 {
   font-weight: 500;
   color: grey;
   text-transform: uppercase;
+  text-shadow: 1px 1px 1px dimgrey;
 }
 
 .socialStats {
@@ -30,6 +31,20 @@ h3 + .numbers {
   border-radius: 0.5rem;
   background-color: snow;
   max-height: 8rem;
+}
+@media screen and (min-width: 1024px) {
+  .twitter,
+.facebook,
+.google {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .facebook {
+    margin: 0 1rem;
+  }
 }
 
 .socialCard {
@@ -168,11 +183,23 @@ h1 {
 
 .upperChart {
   width: 100%;
+  height: 40%;
 }
 
 .lowerChart1,
 .lowerChart2 {
   flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.lowerChart1 {
+  border-top: 2px solid lightgrey;
+  border-right: 2px solid lightgrey;
+}
+
+.lowerChart2 {
+  border-top: 2px solid lightgrey;
 }
 
 .formCard {
@@ -188,6 +215,7 @@ h1 {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  border-top: solid lightgrey;
 }
 @media screen and (min-width: 768px) {
   .newMembers,
@@ -205,7 +233,12 @@ h1 {
 @media screen and (min-width: 768px) {
   .messageUser {
     border-top: 1.5px solid lightgrey;
-    border-right: 1.5px solid lightgrey;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .messageUser:last-of-type {
+    border-left: 1.5px solid lightgrey;
   }
 }
 
@@ -257,7 +290,7 @@ hr {
 
 .messageheading {
   margin-bottom: 1rem;
-  letter-spacing: 1rem;
+  letter-spacing: 0.2rem;
 }
 
 .forminput {
@@ -332,12 +365,15 @@ textarea::placeholder {
 
 #select {
   width: 100%;
-  line-height: 1;
+  font-size: 1.1rem;
   border: solid lightgrey;
   border-radius: 0.5rem;
   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right white;
   -webkit-appearance: none;
   background-position-x: 97%;
+}
+#select:focus {
+  border: solid #6f74aa;
 }
 
 .notification {
@@ -358,99 +394,101 @@ textarea::placeholder {
 
 .toggle1 {
   display: flex;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
-/* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
-  width: 6rem;
-  height: 3.4rem;
+  display: block;
+  width: 7.2rem;
+  height: 3.3rem;
+}
+@media screen and (min-width: 768px) {
+  .switch {
+    width: 6.5rem;
+    height: 3.9rem;
+  }
 }
 
-/* Hide default HTML checkbox */
-.switch .checkbox {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 0;
-  right: 0;
+  left: -1px;
   bottom: 0;
-  background-color: #ccc;
+  right: 0;
+  background: lightgrey;
   transition: 0.4s;
-  border: solid lightgrey;
+  border: 3px solid #555A91;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 1px;
-  bottom: 4px;
-  top: 1px;
-  background-color: white;
-  transition: 0.4s;
+  top: 5px;
+  left: 0px;
+  background-color: #555A91;
+  transition: 0.5s;
+}
+
+.switch .checkbox {
+  display: none;
 }
 
 .checkbox:checked + .slider {
-  background-color: #6f74aa;
+  background-color: #555A91;
+  border: 3px solid lightgrey;
 }
 
-.checkbox:focus + .slider {
-  box-shadow: 0 0 1px #6f74aa;
-}
-
-.checkbox:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 35px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg);
 }
 
-.on {
-  display: none;
+.checkbox:checked + .slider:before {
+  transform: translateX(34px) rotateZ(45deg);
+  background-color: lightgrey;
 }
 
-.on {
+.slider::before {
+  font-family: "Roboto Slab";
+  content: "OFF";
   color: white;
-  transform: translate(15%, 80%);
-  top: 50%;
-  left: 50%;
   font-size: 0.9rem;
-  font-family: Verdana, sans-serif;
+  padding-left: 0.4rem;
+  padding-top: 0.1rem;
+}
+@media screen and (min-width: 768px) {
+  .slider::before {
+    padding-left: 0.3rem;
+    padding-top: 0.3rem;
+  }
 }
 
-.off {
-  color: #555A91;
-  position: absolute;
-  transform: translate(18%, -50%);
-  top: 50%;
-  left: 50%;
-  font-size: 0.9rem;
-  font-family: Verdana, sans-serif;
+.checkbox:checked + .slider::before {
+  content: " ";
 }
 
-.checkbox:checked + .slider .on {
-  display: block;
+.checkbox:checked + .slider::before {
+  content: "ON";
+  color: black;
+  font-family: "Roboto Slab";
+  padding-left: 0.6rem;
+  padding-top: 0.1rem;
+  font-size: 1rem;
 }
-
-.checkbox:checked + .slider .off {
-  display: none;
+@media screen and (min-width: 768px) {
+  .checkbox:checked + .slider::before {
+    padding-left: 0.6rem;
+    padding-top: 0.4rem;
+  }
 }
 
 body {
@@ -532,6 +570,7 @@ li {
   height: 3rem;
   padding-right: 0.4rem;
   align-self: center;
+  padding-top: 1rem;
 }
 
 .horizontal {

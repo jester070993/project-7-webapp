@@ -1,7 +1,7 @@
 {
-  "name": "css-grid",
+  "name": "chart",
   "version": "1.0.0",
-  "description": "",
+  "description": "chart",
   "main": "index.js",
   "scripts": {
     "start": "run-script-os",
@@ -14,5 +14,16 @@
   "devDependencies": {
     "browser-sync": "^2.24.5",
     "run-script-os": "^1.0.3"
-  }
+  },
+  "dependencies": {
+    "chart.js": "^2.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jester070993/project-7-webapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jester070993/project-7-webapp/issues"
+  },
+  "homepage": "https://github.com/jester070993/project-7-webapp#readme"
 }

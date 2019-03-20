@@ -15,6 +15,7 @@
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
+	border-top: solid lightgrey;
 	@include tablet{
 		width: 50%;
 	}
@@ -31,14 +32,16 @@
 }
 
 .messageUser{
-
 	@include tablet {
 		border-top: 1.5px solid lightgrey;
-					border-right: 1.5px solid lightgrey;
-
-	
 	}
 
+}
+
+.messageUser:last-of-type{
+	@include tablet { 
+		border-left: 1.5px solid lightgrey;
+	 }
 }
 
 
@@ -96,7 +99,7 @@ hr{
 
 .messageheading{
 	margin-bottom: 1rem;
-	letter-spacing: 1rem;
+	letter-spacing: .2rem;
 }
 
 .forminput{
@@ -177,12 +180,16 @@ textarea{
 	// padding: 20px;
 	// font-size: 16px;
 	// color: #3F3F3F;
-    line-height: 1;
+	font-size: 1.1rem;
     border: solid lightgrey;
     border-radius: .5rem;
     background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right white;
     -webkit-appearance: none;
     background-position-x: 97%;
+    &:focus{
+		border: solid $header;
+	}
+
 }
 
 //slide button stying, slider, positioning, etc.
@@ -203,106 +210,103 @@ textarea{
 
 .toggle1{
 	display: flex;
-	margin-bottom: 3.5rem;
+	margin-bottom: 3rem;
 }
 
-/* The switch - the box around the slider */
-.switch {
+
+.switch{
   position: relative;
-  display: inline-block;
-  width: 6rem;
-  height: 3.4rem;
+  display: block;
+  width: 7.2rem;
+  height: 3.3rem;
+  @include tablet {
+  	width: 6.5rem;
+  	height: 3.9rem;
+  }
 }
 
-/* Hide default HTML checkbox */
-.switch .checkbox {
-  opacity: 0;
-  width: 0;
-  height: 0;
-
-}
-
-/* The slider */
-.slider {
+.slider{
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 0;
-  right: 0;
+  left: -1px;
   bottom: 0;
-
-  background-color: #ccc;
-  transition: .4s;
-    border:  solid lightgrey;
-
+  right: 0;
+  background: lightgrey;
+  transition: 0.4s;
+  border: 3px solid $purple;
 }
 
-.slider:before {
+.slider:before{
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 1px;
-  // left: -5px;
-  bottom: 4px;
-  top: 1px;
-  background-color: white;
-  transition: .4s;
-   // border:  solid lightgrey;
-
+  // bottom: 14px;
+  top: 5px;
+  left: 0px;
+  background-color: $purple;
+  transition: 0.5s;
+  
 }
 
-.checkbox:checked + .slider {
-  background-color: $header;
-}
-
-.checkbox:focus + .slider {
-  box-shadow: 0 0 1px $header;
-}
-
-.checkbox:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-
-.on
-{
+.switch .checkbox {
   display: none;
 }
 
-//on and off text in slider
-.on 
-{
+.checkbox:checked + .slider {
+  background-color: $purple;
+  border: 3px solid lightgrey;
+}
+
+.slider.round {
+  border-radius: 35px;
+  
+}
+
+.slider.round:before {
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg)
+  
+}
+
+.checkbox:checked + .slider:before {
+  transform: translateX(34px) rotateZ(45deg);
+  background-color: lightgrey;
+
+}
+
+.slider::before {
+	font-family: $headerFont;
+  content: "OFF";
   color: white;
-   // position: absolute;
-  transform: translate(15% , 80%);
-  top: 50%;
-  left: 50%;
   font-size: .9rem;
-  font-family: Verdana, sans-serif;
+  padding-left: .4rem;
+  padding-top: .1rem;
+  @include tablet {
+  	 padding-left: .3rem;
+ 	 padding-top: .3rem;
+  }
 }
 
-.off{
-	  color: $purple;
-	  position: absolute;
-	  transform: translate(18%,-50%);
-	  top: 50%;
-	  left: 50%;
-	  font-size: .9rem;
-	  font-family: Verdana, sans-serif;
+.checkbox:checked + .slider::before{
+  content: " ";
 }
 
-.checkbox:checked+ .slider .on
-{display: block;}
+.checkbox:checked + .slider::before{
+  content: "ON";
+  color: black; 
+  font-family: $headerFont;
+// font-weight: 900;
+  padding-left: .6rem;
+   // padding-bottom: 1rem;
+  padding-top: .1rem;
+  font-size: 1rem;
+    @include tablet {
+  	 padding-left: .6rem;
+   // padding-bottom: 1rem;
+  	padding-top: .4rem;
+  }
 
-.checkbox:checked + .slider .off
-{display: none;}
+}

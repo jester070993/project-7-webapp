@@ -6,10 +6,32 @@
 
 .upperChart{
 	width: 100%;
+	max-height: 40%;
 	// margin: 0 auto;
 }
 
 .lowerChart1,
 .lowerChart2 {
-	flex: 1;
+	@include desktop {
+		height: 30%;
+		flex: 1;
+	}
+}
+
+.lowerChart1,
+.lowerChart2{
+	width: 100%;
+}
+
+
+
+
+.lowerChart1{
+	border-top: 2px solid lightgrey;
+	border-right: 2px solid lightgrey;
+}
+
+
+.lowerChart2{
+	border-top: 2px solid lightgrey;
 }

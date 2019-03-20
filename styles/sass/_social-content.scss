@@ -6,6 +6,8 @@ h4{
 	font-weight: 500;
 	color: grey;
 	text-transform: uppercase;
+  text-shadow: 1px 1px  1px dimgrey;
+
 }
 
 //social stats navigation
@@ -35,6 +37,17 @@ h3{
 	border-radius: .5rem;
 	background-color: snow;
 	max-height: 8rem;
+	@include desktop {
+		flex: 1;
+		justify-content: center;
+	
+	}
+	}
+
+.facebook{
+	@include desktop {
+		margin: 0 1rem;
+	}
 }
 
 //aligns social name a number in vertical center of each card
