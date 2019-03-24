@@ -183,14 +183,20 @@ h1 {
 
 .upperChart {
   width: 100%;
-  height: 40%;
+  max-height: 40%;
+}
+
+@media screen and (min-width: 1024px) {
+  .lowerChart1,
+.lowerChart2 {
+    height: 30%;
+    flex: 1;
+  }
 }
 
 .lowerChart1,
 .lowerChart2 {
-  flex: 1;
   width: 100%;
-  height: 100%;
 }
 
 .lowerChart1 {
@@ -230,6 +236,7 @@ h1 {
   padding: 1rem;
   display: flex;
 }
+
 @media screen and (min-width: 768px) {
   .messageUser {
     border-top: 1.5px solid lightgrey;
@@ -276,7 +283,7 @@ hr {
 
 .userImage {
   max-width: 4rem;
-  max-height: 5rem;
+  max-height: 4rem;
   margin-right: 1rem;
   border-radius: 2rem;
   border: solid 2px #CCC;
@@ -452,15 +459,10 @@ textarea::placeholder {
   transform: rotateZ(-45deg);
 }
 
-.checkbox:checked + .slider:before {
-  transform: translateX(34px) rotateZ(45deg);
-  background-color: lightgrey;
-}
-
 .slider::before {
   font-family: "Roboto Slab";
   content: "OFF";
-  color: white;
+  color: #9fa2c7;
   font-size: 0.9rem;
   padding-left: 0.4rem;
   padding-top: 0.1rem;
@@ -473,22 +475,51 @@ textarea::placeholder {
 }
 
 .checkbox:checked + .slider::before {
-  content: " ";
-}
-
-.checkbox:checked + .slider::before {
   content: "ON";
-  color: black;
+  color: #555A91;
   font-family: "Roboto Slab";
   padding-left: 0.6rem;
   padding-top: 0.1rem;
   font-size: 1rem;
+  transform: translateX(34px) rotateZ(45deg);
+  background-color: lightgrey;
 }
 @media screen and (min-width: 768px) {
   .checkbox:checked + .slider::before {
     padding-left: 0.6rem;
     padding-top: 0.4rem;
   }
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slideMe {
+  animation: slideup 1s ease;
+}
+
+.messageFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.successMessage {
+  color: limegreen;
+  display: none;
+}
+
+.requireMessage {
+  color: red;
+  opacity: 0;
+}
+
+.visable {
+  display: block;
 }
 
 body {
@@ -551,7 +582,7 @@ li {
 
 .avitar {
   max-width: 4rem;
-  max-height: 5rem;
+  max-height: 4rem;
   border-radius: 50%;
   margin-right: 1rem;
   margin-left: auto;
@@ -568,9 +599,13 @@ li {
   margin-right: 1rem;
   width: 2rem;
   height: 3rem;
-  padding-right: 0.4rem;
   align-self: center;
-  padding-top: 1rem;
+  padding-top: 0.8rem;
+  position: relative;
+  transition: transform 0.3s;
+}
+.bell:hover {
+  transform: rotateZ(30deg);
 }
 
 .horizontal {
@@ -683,16 +718,56 @@ g {
 .dashboard,
 .visits,
 .setting,
-.members,
-.bell {
+.members {
   width: 2.5rem;
 }
 .dashboard:hover,
 .visits:hover,
 .setting:hover,
-.members:hover,
-.bell:hover {
+.members:hover {
   width: 3rem;
+}
+
+.greenDot {
+  position: absolute;
+  max-width: 10px;
+  top: 5px;
+  left: 10px;
+}
+
+.greenDotAnchor {
+  position: relative;
+  text-decoration: none;
+}
+
+.alertNotifications {
+  background-color: white;
+  position: absolute;
+  width: 22.3rem;
+  font-size: 1.2rem;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .alertNotifications {
+    width: 15rem;
+  }
+}
+
+.navbarNotification {
+  max-width: 10px;
+  max-height: 10px;
+  margin: 1rem;
+}
+
+.alertflexbox,
+.listflex {
+  display: flex;
+  padding-top: 0.3rem;
+}
+
+.alertCircle {
+  margin: 0.5rem;
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=base.css.map */
