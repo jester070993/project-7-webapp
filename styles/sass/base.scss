@@ -30,12 +30,12 @@ body{
 }
 
 .container{
-	max-width: 1200px;
+	// max-width: 1200px;
 	// height: 100vh;
 	display: grid;
 	grid-gap: .3rem 0;
 	grid-template-columns: 1.3fr 3.5fr 3.5fr 3.5fr ;
-grid-template-rows: 50px minmax(50px, max-content);
+	grid-template-rows: 50px minmax(50px, max-content);
 	// grid-auto-rows:  minmax(10px, auto);
 }
 
